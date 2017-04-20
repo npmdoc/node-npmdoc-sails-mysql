@@ -1,0 +1,2858 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >sails-mysql (v0.11.5)</a>
+</h1>
+<h4>MySQL adapter for Sails.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql">module sails-mysql</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">sails-mysql.</span>syncable</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.addAttribute">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>addAttribute
+            <span class="apidocSignatureSpan">(connectionName, collectionName, attrName, attrDef, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.count">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>count
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.create">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>create
+            <span class="apidocSignatureSpan">(connectionName, collectionName, data, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.createEach">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>createEach
+            <span class="apidocSignatureSpan">(connectionName, collectionName, valuesList, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.define">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>define
+            <span class="apidocSignatureSpan">(connectionName, collectionName, definition, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.describe">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>describe
+            <span class="apidocSignatureSpan">(connectionName, collectionName, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.destroy">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>destroy
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.drop">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>drop
+            <span class="apidocSignatureSpan">(connectionName, collectionName, relations, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.emit">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>emit
+            <span class="apidocSignatureSpan">(evName, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.escape">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>escape
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.escapeId">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>escapeId
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.find">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>find
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.join">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>join
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.query">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>query
+            <span class="apidocSignatureSpan">(connectionName, collectionName, query, data, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.registerConnection">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>registerConnection
+            <span class="apidocSignatureSpan">(connection, collections, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.removeAttribute">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>removeAttribute
+            <span class="apidocSignatureSpan">(connectionName, collectionName, attrName, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.stream">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>stream
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, stream, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.teardown">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>teardown
+            <span class="apidocSignatureSpan">(connectionName, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.update">
+            function <span class="apidocSignatureSpan">sails-mysql.</span>update
+            <span class="apidocSignatureSpan">(connectionName, collectionName, options, values, cb, connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.</span>register</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.</span>release</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.</span>sql</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sails-mysql.</span>identity</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sails-mysql.</span>pkFormat</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql.register">module sails-mysql.register</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.register.configure">
+            function <span class="apidocSignatureSpan">sails-mysql.register.</span>configure
+            <span class="apidocSignatureSpan">( connections )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql.release">module sails-mysql.release</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.release.poolfully">
+            function <span class="apidocSignatureSpan">sails-mysql.release.</span>poolfully
+            <span class="apidocSignatureSpan">(conn, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.release.poollessly">
+            function <span class="apidocSignatureSpan">sails-mysql.release.</span>poollessly
+            <span class="apidocSignatureSpan">(conn, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql.sql">module sails-mysql.sql</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql._schema">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>_schema
+            <span class="apidocSignatureSpan">(collectionName, attribute, attrName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.addColumn">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>addColumn
+            <span class="apidocSignatureSpan">(collectionName, attrName, attrDef)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.attributes">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>attributes
+            <span class="apidocSignatureSpan">(collectionName, attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.build">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>build
+            <span class="apidocSignatureSpan">(collectionName, collection, fn, separator, keyOverride, parentKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.buildSingleQuery">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>buildSingleQuery
+            <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.countQuery">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>countQuery
+            <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.normalizeSchema">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>normalizeSchema
+            <span class="apidocSignatureSpan">(schema)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.predicate">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>predicate
+            <span class="apidocSignatureSpan">(collectionName, criterion, key, parentKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.prepareAttribute">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareAttribute
+            <span class="apidocSignatureSpan">(collectionName, value, attrName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.prepareCriterion">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareCriterion
+            <span class="apidocSignatureSpan">(collectionName, value, key, parentKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.prepareValue">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareValue
+            <span class="apidocSignatureSpan">(collectionName, value, attrName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.removeColumn">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>removeColumn
+            <span class="apidocSignatureSpan">(collectionName, attrName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.schema">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>schema
+            <span class="apidocSignatureSpan">(collectionName, attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.serializeOptions">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>serializeOptions
+            <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.values">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>values
+            <span class="apidocSignatureSpan">(collectionName, values, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.sql.where">
+            function <span class="apidocSignatureSpan">sails-mysql.sql.</span>where
+            <span class="apidocSignatureSpan">(collectionName, where, key, parentKey)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql.teardown">module sails-mysql.teardown</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.teardown.configure">
+            function <span class="apidocSignatureSpan">sails-mysql.teardown.</span>configure
+            <span class="apidocSignatureSpan">( connections )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-mysql.utils">module sails-mysql.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.utils.buildSelectStatement">
+            function <span class="apidocSignatureSpan">sails-mysql.utils.</span>buildSelectStatement
+            <span class="apidocSignatureSpan">(criteria, table, schemaDefs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.utils.parseUrl">
+            function <span class="apidocSignatureSpan">sails-mysql.utils.</span>parseUrl
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.utils.prepareValue">
+            function <span class="apidocSignatureSpan">sails-mysql.utils.</span>prepareValue
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-mysql.utils.toSqlDate">
+            function <span class="apidocSignatureSpan">sails-mysql.utils.</span>toSqlDate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-mysql.utils.</span>object</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql" id="apidoc.module.sails-mysql">module sails-mysql</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.addAttribute" id="apidoc.element.sails-mysql.addAttribute">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>addAttribute
+        <span class="apidocSignatureSpan">(connectionName, collectionName, attrName, attrDef, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addAttribute = function (connectionName, collectionName, attrName, attrDef, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __ADD_ATTRIBUTE__, cb);
+  } else {
+    __ADD_ATTRIBUTE__(connection, cb);
+  }
+
+  function __ADD_ATTRIBUTE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    var query = sql.addColumn(tableName, attrName, attrDef);
+
+    // Run query
+    log(&#x27;MYSQL.addAttribute: &#x27;, query);
+
+    connection.query(query, function(err, result) {
+      if (err) return cb(err);
+
+      // TODO: marshal response to waterline interface
+      cb(err);
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.count" id="apidoc.element.sails-mysql.count">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>count
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (connectionName, collectionName, options, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __COUNT__, cb);
+  } else {
+    __COUNT__(connection, cb);
+  }
+
+  function __COUNT__(connection, cb) {
+
+    // Check if this is an aggregate query and that there is something to return
+    if(options.groupBy || options.sum || options.average || options.min || options.max) {
+      if(!options.sum &#x26;&#x26; !options.average &#x26;&#x26; !options.min &#x26;&#x26; !options.max) {
+        return cb(Errors.InvalidGroupBy);
+      }
+    }
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+
+    // Build find query
+    var schema = connectionObject.schema;
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a count query
+    try {
+      _query = sequel.count(collectionName, options);
+    } catch(e) {
+      return cb(e);
+    }
+
+    // Run query
+    log(&#x27;MYSQL.count: &#x27;, _query.query[0]);
+
+    connection.query(_query.query[0], function(err, result) {
+      if(err) return cb(err);
+      // Return the count from the simplified query
+      cb(null, result[0].count);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.create" id="apidoc.element.sails-mysql.create">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>create
+        <span class="apidocSignatureSpan">(connectionName, collectionName, data, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (connectionName, collectionName, data, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __CREATE__, cb);
+  } else {
+    __CREATE__(connection, cb);
+  }
+
+  function __CREATE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    var _insertData = _.cloneDeep(data);
+
+    // Prepare values
+    Object.keys(data).forEach(function(value) {
+      data[value] = utils.prepareValue(data[value]);
+    });
+
+    var schema = connectionObject.schema;
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a query for the specific query strategy
+    try {
+      _query = sequel.create(collectionName, data);
+    } catch(e) {
+      return cb(e);
+    }
+
+    // Run query
+    log(&#x27;MySQL.create: &#x27;, _query.query);
+
+    connection.query(_query.query, function(err, result) {
+      if (err) return cb( handleQueryError(err) );
+
+      // Build model to return
+      var autoInc = null;
+
+      Object.keys(collection.definition).forEach(function(key) {
+        if(!collection.definition[key].hasOwnProperty(&#x27;autoIncrement&#x27;)) return;
+        autoInc = key;
+      });
+
+      var autoIncData = {};
+
+      if (autoInc) {
+        autoIncData[autoInc] = result.insertId;
+      }
+
+      var values = _.extend({}, _insertData, autoIncData);
+      cb(err, values);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.createEach" id="apidoc.element.sails-mysql.createEach">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>createEach
+        <span class="apidocSignatureSpan">(connectionName, collectionName, valuesList, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createEach = function (connectionName, collectionName, valuesList, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __CREATE_EACH__, cb);
+  } else {
+    __CREATE_EACH__(connection, cb);
+  }
+
+
+  function __CREATE_EACH__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    var records = [];
+
+    async.eachSeries(valuesList, function (data, cb) {
+
+      // Prepare values
+      Object.keys(data).forEach(function(value) {
+        data[value] = utils.prepareValue(data[value]);
+      });
+
+      var schema = connectionObject.schema;
+      var _query;
+
+      var sequel = new Sequel(schema, sqlOptions);
+
+      // Build a query for the specific query strategy
+      try {
+        _query = sequel.create(collectionName, data);
+      } catch(e) {
+        return cb(e);
+      }
+
+      // Run query
+      log(&#x27;MySQL.createEach: &#x27;, _query.query);
+
+      connection.query(_query.query, function(err, results) {
+        if (err) return cb( handleQueryError(err) );
+        records.push(results.insertId);
+        cb();
+      });
+    }, function(err) {
+      if(err) return cb(err);
+
+      var pk = &#x27;id&#x27;;
+
+      Object.keys(collection.definition).forEach(function(key) {
+        if(!collection.definition[key].hasOwnProperty(&#x27;primaryKey&#x27;)) return;
+        pk = key;
+      });
+
+      // If there are no records (`!records.length`)
+      // then skip the query altogether- we don&#x27;t need to look anything up
+      if (!records.length){
+        return cb(null, []);
+      }
+
+      // Build a Query to get newly inserted records
+      var query = &#x27;SELECT * FROM &#x27; + mysql.escapeId(tableName) + &#x27; WHERE &#x27; + mysql.escapeId(pk) + &#x27; IN (&#x27; + records + &#x27;);&#x27;;
+
+      // Run Query returing results
+      log(&#x27;MYSQL.createEach: &#x27;, query);
+
+      connection.query(query, function(err, results) {
+        if(err) return cb(err);
+        cb(null, results);
+      });
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.define" id="apidoc.element.sails-mysql.define">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>define
+        <span class="apidocSignatureSpan">(connectionName, collectionName, definition, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">define = function (connectionName, collectionName, definition, cb, connection) {
+  var self = this;
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __DEFINE__, cb);
+  } else {
+    __DEFINE__(connection, cb);
+  }
+
+  function __DEFINE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    if (!collection) {
+      return cb(util.format(&#x27;Unknown collection `%s` in connection `%s`&#x27;, collectionName, connectionName));
+    }
+    var tableName = mysql.escapeId(collectionName);
+
+    // Iterate through each attribute, building a query string
+    var schema = sql.schema(tableName, definition);
+
+    // Build query
+    var query = &#x27;CREATE TABLE &#x27; + tableName + &#x27; (&#x27; + schema + &#x27;)&#x27;;
+
+    if(connectionObject.config.charset) {
+      query += &#x27; DEFAULT CHARSET &#x27; + connectionObject.config.charset;
+    }
+
+    if(connectionObject.config.collation) {
+      if(!connectionObject.config.charset) query += &#x27; DEFAULT &#x27;;
+      query += &#x27; COLLATE &#x27; + connectionObject.config.collation;
+    }
+
+
+    // Run query
+    log(&#x27;MYSQL.define: &#x27;, query);
+
+    connection.query(query, function __DEFINE__(err, result) {
+      if (err) return cb(err);
+
+      //
+      // TODO:
+      // Determine if this can safely be changed to the `adapter` closure var
+      // (i.e. this is the last remaining usage of the &#x22;this&#x22; context in the MySQLAdapter)
+      //
+
+      self.describe(connectionName, collectionName, function(err) {
+        cb(err, result);
+      });
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.describe" id="apidoc.element.sails-mysql.describe">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>describe
+        <span class="apidocSignatureSpan">(connectionName, collectionName, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">describe = function (connectionName, collectionName, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __DESCRIBE__, cb);
+  } else {
+    __DESCRIBE__(connection, cb);
+  }
+
+  function __DESCRIBE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    if (!collection) {
+      return cb(util.format(&#x27;Unknown collection `%s` in connection `%s`&#x27;, collectionName, connectionName));
+    }
+    var tableName = mysql.escapeId(collectionName);
+
+    var query = &#x27;DESCRIBE &#x27; + tableName;
+    var pkQuery = &#x27;SHOW INDEX FROM &#x27; + tableName;
+
+    // Run query
+    log(&#x27;MySQL.describe: &#x27;, query);
+    log(&#x27;MySQL.describe(pk): &#x27;, pkQuery);
+
+    connection.query(query, function __DESCRIBE__(err, schema) {
+      if (err) {
+        if (err.code === &#x27;ER_NO_SUCH_TABLE&#x27;) {
+          return cb();
+        } else return cb(err);
+      }
+
+      connection.query(pkQuery, function(err, pkResult) {
+        if(err) return cb(err);
+
+        // Loop through Schema and attach extra attributes
+        schema.forEach(function(attr) {
+
+          // Set Primary Key Attribute
+          if(attr.Key === &#x27;PRI&#x27;) {
+            attr.primaryKey = true;
+
+            // If also an integer set auto increment attribute
+            if(attr.Type === &#x27;int(11)&#x27;) {
+              attr.autoIncrement = true;
+            }
+          }
+
+          // Set Unique Attribute
+          if(attr.Key === &#x27;UNI&#x27;) {
+            attr.unique = true;
+          }
+        });
+
+        // Loop Through Indexes and Add Properties
+        pkResult.forEach(function(result) {
+          schema.forEach(function(attr) {
+            if(attr.Field !== result.Column_name) return;
+            attr.indexed = true;
+          });
+        });
+
+        // Convert mysql format to standard javascript object
+        var normalizedSchema = sql.normalizeSchema(schema);
+
+        // Set Internal Schema Mapping
+        collection.schema = normalizedSchema;
+
+        // TODO: check that what was returned actually matches the cache
+        cb(null, normalizedSchema);
+      });
+
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.destroy" id="apidoc.element.sails-mysql.destroy">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>destroy
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (connectionName, collectionName, options, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __DESTROY__, cb);
+  } else {
+    __DESTROY__(connection, cb);
+  }
+
+  function __DESTROY__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    // Build query
+    var schema = connectionObject.schema;
+
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a query for the specific query strategy
+    try {
+      _query = sequel.destroy(collectionName, options);
+    } catch(e) {
+      return cb(e);
+    }
+
+    async.auto({
+
+      findRecords: function(next) {
+        adapter.find(connectionName, collectionName, options, next, connection);
+      },
+
+      destroyRecords: [&#x27;findRecords&#x27;, function(next) {
+        log(&#x27;MySQL.destroy: &#x27;, _query.query);
+
+        connection.query(_query.query, next);
+      }]
+    },
+    function(err, results) {
+      if(err) return cb(err);
+      cb(null, results.findRecords);
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.drop" id="apidoc.element.sails-mysql.drop">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>drop
+        <span class="apidocSignatureSpan">(connectionName, collectionName, relations, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">drop = function (connectionName, collectionName, relations, cb, connection) {
+
+  if(typeof relations === &#x27;function&#x27;) {
+    cb = relations;
+    relations = [];
+  }
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __DROP__, cb);
+  } else {
+    __DROP__(connection, cb);
+  }
+
+  function __DROP__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+
+
+    // Drop any relations
+    function dropTable(item, next) {
+
+      var collection = connectionObject.collections[item];
+      var tableName = mysql.escapeId(collectionName);
+
+      // Build query
+      var query = &#x27;DROP TABLE &#x27; + tableName;
+
+      // Run query
+      log(&#x27;MYSQL.drop: &#x27;, query);
+
+      connection.query(query, function __DROP__(err, result) {
+        if (err) {
+          if (err.code !== &#x27;ER_BAD_TABLE_ERROR&#x27; &#x26;&#x26; err.code !== &#x27;ER_NO_SUCH_TABLE&#x27;) return next(err);
+          result = null;
+        }
+
+        next(null, result);
+      });
+    }
+
+    async.eachSeries(relations, dropTable, function(err) {
+      if(err) return cb(err);
+      dropTable(collectionName, cb);
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.emit" id="apidoc.element.sails-mysql.emit">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>emit
+        <span class="apidocSignatureSpan">(evName, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (evName, data) {
+
+  // temporary hack- should only be used for cases that would crash anyways
+  // (see todo above- we still shouldn&#x27;t throw, emit instead, hence this stub)
+  if (evName === &#x27;error&#x27;) { throw data; }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.escape" id="apidoc.element.sails-mysql.escape">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>escape
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escape = function (val) {
+  return mysql.escape(val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // Cast functions to strings
+  if (_.isFunction(value)) {
+    value = value.toString();
+  }
+
+  // Escape (also wraps in quotes)
+  return mysql.<span class="apidocCodeKeywordSpan">escape</span>(value);
+},
+
+prepareAttribute: function(collectionName, value, attrName) {
+  return mysql.escapeId(collectionName) + &#x27;.&#x27; + mysql.escapeId(attrName);
+},
+
+// // Starting point for predicate evaluation
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.escapeId" id="apidoc.element.sails-mysql.escapeId">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>escapeId
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeId = function (name) {
+  return mysql.escapeId(name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return memo;
+}, {});
+  },
+
+  // @returns ALTER query for adding a column
+  addColumn: function (collectionName, attrName, attrDef) {
+// Escape table name and attribute name
+var tableName = mysql.<span class="apidocCodeKeywordSpan">escapeId</span>(collectionName);
+
+// sails.log.verbose(&#x22;ADDING &#x22;,attrName, &#x22;with&#x22;,attrDef);
+
+// Build column definition
+var columnDefinition = sql._schema(collectionName, attrDef, attrName);
+
+return &#x27;ALTER TABLE &#x27; + tableName + &#x27; ADD &#x27; + columnDefinition;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.find" id="apidoc.element.sails-mysql.find">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>find
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (connectionName, collectionName, options, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __FIND__, cb);
+  } else {
+    __FIND__(connection, cb);
+  }
+
+  function __FIND__(connection, cb) {
+
+    // Check if this is an aggregate query and that there is something to return
+    if(options.groupBy || options.sum || options.average || options.min || options.max) {
+      if(!options.sum &#x26;&#x26; !options.average &#x26;&#x26; !options.min &#x26;&#x26; !options.max) {
+        return cb(Errors.InvalidGroupBy);
+      }
+    }
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+
+    // Build find query
+    var schema = connectionObject.schema;
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a query for the specific query strategy
+    try {
+      _query = sequel.find(collectionName, options);
+    } catch(e) {
+      return cb(e);
+    }
+
+    // Run query
+    log(&#x27;MYSQL.find: &#x27;, _query.query[0]);
+
+    connection.query(_query.query[0], function(err, result) {
+      if(err) return cb(err);
+      cb(null, result);
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.join" id="apidoc.element.sails-mysql.join">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>join
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function (connectionName, collectionName, options, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __JOIN__, cb);
+  } else {
+    __JOIN__(connection, cb);
+  }
+
+  function __JOIN__(client, done) {
+
+    // Populate associated records for each parent result
+    // (or do them all at once as an optimization, if possible)
+    Cursor({
+
+      instructions: options,
+      nativeJoins: true,
+
+<span class="apidocCodeCommentSpan">      /**
+       * Find some records directly (using only this adapter)
+       * from the specified collection.
+       *
+       * @param  {String}   collectionIdentity
+       * @param  {Object}   criteria
+       * @param  {Function} _cb
+       */
+</span>      $find: function (collectionName, criteria, _cb) {
+        return adapter.find(connectionName, collectionName, criteria, _cb, client);
+      },
+
+      /**
+       * Look up the name of the primary key field
+       * for the collection with the specified identity.
+       *
+       * @param  {String}   collectionIdentity
+       * @return {String}
+       */
+      $getPK: function (collectionName) {
+        if (!collectionName) return;
+        return _getPK(connectionName, collectionName);
+      },
+
+      /**
+       * Given a strategy type, build up and execute a SQL query for it.
+       *
+       * @param {}
+       */
+
+      $populateBuffers: function populateBuffers(options, next) {
+
+        var buffers = options.buffers;
+        var instructions = options.instructions;
+
+        // Grab the collection by looking into the connection
+        var connectionObject = connections[connectionName];
+        var collection = connectionObject.collections[collectionName];
+
+        var parentRecords = [];
+        var cachedChildren = {};
+
+        // Grab Connection Schema
+        var schema = {};
+
+        Object.keys(connectionObject.collections).forEach(function(coll) {
+          schema[coll] = connectionObject.collections[coll].schema;
+        });
+
+        // Build Query
+        var _schema = connectionObject.schema;
+
+        var sequel = new Sequel(_schema, sqlOptions);
+        var _query;
+
+        // Build a query for the specific query strategy
+        try {
+          _query = sequel.find(collectionName, instructions);
+        } catch(e) {
+          return next(e);
+        }
+
+        async.auto({
+
+          processParent: function(next) {
+            log(&#x27;MySQL.populateBuffers: &#x27;, _query.query[0]);
+
+            client.query(_query.query[0], function __FIND__(err, result) {
+              if(err) return next(err);
+
+              parentRecords = result;
+
+              var splitChildren = function(parent, next) {
+                var cache = {};
+
+                _.keys(parent).forEach(function(key) {
+
+                  // Check if we can split this on our special alias identifier &#x27;___&#x27; and if
+                  // so put the result in the cache
+                  var split = key.split(&#x27;___&#x27;);
+                  if(split.length &#x3c; 2) return;
+
+                  if(!hop(cache, split[0])) cache[split[0]] = {};
+                  cache[split[0]][split[1]] = parent[key];
+                  delete parent[key];
+                });
+
+                // Combine the local cache into the cachedChildren
+                if(_.keys(cache).length &#x3e; 0) {
+                  _.keys(cache).forEach(function(pop) {
+                    if(!hop(cachedChildren, pop)) cachedChildren[pop] = [];
+                    cachedChildren[pop] = cachedChildren[pop].concat(cache[pop]);
+                  });
+                }
+
+                next();
+              };
+
+
+              // Pull out any aliased child records that have come from a hasFK association
+              async.eachSeries(parentRecords, splitChildren, function(err) {
+                if(err) return next(err);
+                buffers.parents = parentRecords;
+                next();
+              });
+            });
+          },
+
+          // Build child buffers.
+          // For each instruction, loop through the parent records and build up a
+          // buffer for the record.
+          buildChildBuffers: [&#x27;processParent&#x27;, function(next, result ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.query" id="apidoc.element.sails-mysql.query">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>query
+        <span class="apidocSignatureSpan">(connectionName, collectionName, query, data, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (connectionName, collectionName, query, data, cb, connection) {
+
+  if (_.isFunction(data)) {
+    cb = data;
+    data = null;
+  }
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __QUERY__, cb);
+  } else {
+    __QUERY__(connection, cb);
+  }
+
+  function __QUERY__(connection, cb) {
+
+    // Run query
+    log(&#x27;MySQL.query: &#x27;, query);
+
+    if (data) connection.query(query, data, cb);
+    else connection.query(query, cb);
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.registerConnection" id="apidoc.element.sails-mysql.registerConnection">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>registerConnection
+        <span class="apidocSignatureSpan">(connection, collections, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerConnection(connection, collections, cb) {
+
+  // Validate arguments
+  if(!connection.identity) return cb(Errors.IdentityMissing);
+  if(connections[connection.identity]) return cb(Errors.IdentityDuplicate);
+
+  // Build up a schema for this connection that can be used throughout the adapter
+  var schema = {};
+
+  _.each(_.keys(collections), function(coll) {
+    var collection = collections[coll];
+    if(!collection) return;
+
+    var _schema = collection.waterline &#x26;&#x26; collection.waterline.schema &#x26;&#x26; collection.waterline.schema[collection.identity];
+    if(!_schema) return;
+
+    // Set defaults to ensure values are set
+    if(!_schema.attributes) _schema.attributes = {};
+    if(!_schema.tableName) _schema.tableName = coll;
+
+    // If the connection names are&#x27;t the same we don&#x27;t need it in the schema
+    if(!_.includes(collections[coll].connection, connection.identity)) {
+      return;
+    }
+
+    // If the tableName is different from the identity, store the tableName in the schema
+    var schemaKey = coll;
+    if(_schema.tableName != coll) {
+      schemaKey = _schema.tableName;
+    }
+
+    schema[schemaKey] = _schema;
+  });
+
+  if(&#x27;url&#x27; in connection) {
+    utils.parseUrl(connection);
+  }
+
+  // Store the connection
+  connections[connection.identity] = {
+    config: connection,
+    collections: collections,
+    connection: {},
+    schema: schema
+  };
+
+  var activeConnection = connections[connection.identity];
+
+  // Create a connection pool if configured to do so.
+  // (and set up the necessary `releaseConnection` functionality to drain it.)
+  if (activeConnection.config.pool) {
+    activeConnection.connection.pool = mysql.createPool(activeConnection.config);
+    activeConnection.connection.releaseConnection = _releaseConnection.poolfully;
+  }
+  // Otherwise, assign some default releaseConnection functionality.
+  else {
+    activeConnection.connection.releaseConnection = _releaseConnection.poollessly;
+  }
+
+  // Done!  The WLConnection (and all of it&#x27;s collections) have been loaded.
+  return cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.removeAttribute" id="apidoc.element.sails-mysql.removeAttribute">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>removeAttribute
+        <span class="apidocSignatureSpan">(connectionName, collectionName, attrName, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAttribute = function (connectionName, collectionName, attrName, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __REMOVE_ATTRIBUTE__, cb);
+  } else {
+    __REMOVE_ATTRIBUTE__(connection, cb);
+  }
+
+  function __REMOVE_ATTRIBUTE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    var query = sql.removeColumn(tableName, attrName);
+
+    // Run query
+    log(&#x27;MYSQL.removeAttribute: &#x27;, query);
+
+    connection.query(query, function(err, result) {
+      if (err) return cb(err);
+
+      // TODO: marshal response to waterline interface
+      cb(err);
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.stream" id="apidoc.element.sails-mysql.stream">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>stream
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, stream, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (connectionName, collectionName, options, stream, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __STREAM__);
+  } else {
+    __STREAM__(connection);
+  }
+
+  function __STREAM__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+    var tableName = collectionName;
+
+    // Build find query
+    var schema = connectionObject.schema;
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a query for the specific query strategy
+    try {
+      _query = sequel.find(collectionName, options);
+    } catch(e) {
+      return cb(e);
+    }
+    var query = _query.query[0];
+
+    // Run query
+    log(&#x27;MySQL.stream: &#x27;, query);
+
+    var dbStream = connection.query(query);
+
+    // Handle error, an &#x27;end&#x27; event will be emitted after this as well
+    dbStream.on(&#x27;error&#x27;, function(err) {
+      stream.end(err); // End stream
+      cb(err); // Close connection
+    });
+
+    // the field packets for the rows to follow
+    dbStream.on(&#x27;fields&#x27;, function(fields) {});
+
+    // Pausing the connnection is useful if your processing involves I/O
+    dbStream.on(&#x27;result&#x27;, function(row) {
+      connection.pause();
+      stream.write(row, function() {
+        connection.resume();
+      });
+    });
+
+    // all rows have been received
+    dbStream.on(&#x27;end&#x27;, function() {
+      stream.end(); // End stream
+      cb(); // Close connection
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.teardown" id="apidoc.element.sails-mysql.teardown">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>teardown
+        <span class="apidocSignatureSpan">(connectionName, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function teardown(connectionName, cb) {
+
+  function closeConnection(name) {
+    // Drain the MySQL connection pool for this Waterline Connection
+    // (if it&#x27;s in use.)
+
+    if ( connections[name] &#x26;&#x26; connections[name].connection &#x26;&#x26; connections[name].connection.pool ) {
+      // console.log(&#x27;Ending pool for &#x27; + connectionName);
+      connections[name].connection.pool.end();
+    }
+
+    // Make sure memory is freed by removing this stuff from our
+    // global set of WL Connections.
+    delete connections[name];
+  }
+
+  // If no connection name was given, teardown all the connections
+  if(!connectionName) {
+    Object.keys(connections).forEach(function(conn) {
+      closeConnection(conn);
+    });
+  }
+
+  // Else only teardown a single connection
+  else {
+    closeConnection(connectionName);
+  }
+
+  return cb();
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.update" id="apidoc.element.sails-mysql.update">
+        function <span class="apidocSignatureSpan">sails-mysql.</span>update
+        <span class="apidocSignatureSpan">(connectionName, collectionName, options, values, cb, connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (connectionName, collectionName, options, values, cb, connection) {
+
+  if(_.isUndefined(connection)) {
+    return spawnConnection(connectionName, __UPDATE__, cb);
+  } else {
+    __UPDATE__(connection, cb);
+  }
+
+  function __UPDATE__(connection, cb) {
+
+    var connectionObject = connections[connectionName];
+    var collection = connectionObject.collections[collectionName];
+
+    // Build find query
+    var schema = connectionObject.schema;
+    var _query;
+
+    var sequel = new Sequel(schema, sqlOptions);
+
+    // Build a query for the specific query strategy
+    try {
+      _query = sequel.find(collectionName, _.cloneDeep(options));
+    } catch(e) {
+      return cb(e);
+    }
+
+    log(&#x27;MySQL.update(before): &#x27;, _query.query[0]);
+
+    connection.query(_query.query[0], function(err, results) {
+      if(err) return cb(err);
+
+      var ids = [];
+
+      var pk = &#x27;id&#x27;;
+      Object.keys(collection.definition).forEach(function(key) {
+        if(!collection.definition[key].hasOwnProperty(&#x27;primaryKey&#x27;)) return;
+        pk = key;
+      });
+
+      // update statement will affect 0 rows
+      if (results.length === 0) {
+        return cb(null, []);
+      }
+
+      results.forEach(function(result) {
+        ids.push(result[pk]);
+      });
+
+      // Prepare values
+      Object.keys(values).forEach(function(value) {
+        values[value] = utils.prepareValue(values[value]);
+      });
+
+      // Build query
+      try {
+        _query = sequel.update(collectionName, options, values);
+      } catch(e) {
+        return cb(e);
+      }
+
+      // Run query
+      log(&#x27;MySQL.update: &#x27;, _query.query);
+
+      connection.query(_query.query, function(err, result) {
+        if (err) return cb( handleQueryError(err) );
+
+        var criteria;
+        if(ids.length === 1) {
+          criteria = { where: {}, limit: 1 };
+          criteria.where[pk] = ids[0];
+        } else {
+          criteria = { where: {} };
+          criteria.where[pk] = ids;
+        }
+
+        // Build a query for the specific query strategy
+        try {
+          _query = sequel.find(collectionName, criteria);
+        } catch(e) {
+          return cb(e);
+        }
+
+        // Run query
+        log(&#x27;MySQL.update(after): &#x27;, _query.query[0]);
+
+        connection.query(_query.query[0], function(err, result) {
+          if(err) return cb(err);
+          cb(null, result);
+        });
+      });
+
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql.register" id="apidoc.module.sails-mysql.register">module sails-mysql.register</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.register.configure" id="apidoc.element.sails-mysql.register.configure">
+        function <span class="apidocSignatureSpan">sails-mysql.register.</span>configure
+        <span class="apidocSignatureSpan">( connections )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function ( connections ) {
+
+<span class="apidocCodeCommentSpan">  /**
+   * Register a connection (and the collections assigned to it) with the MySQL adapter.
+   *
+   * @param  {Connection} connection
+   * @param  {Object} collections
+   * @param  {Function} cb
+   */
+</span>
+  return function registerConnection (connection, collections, cb) {
+
+    // Validate arguments
+    if(!connection.identity) return cb(Errors.IdentityMissing);
+    if(connections[connection.identity]) return cb(Errors.IdentityDuplicate);
+
+    // Build up a schema for this connection that can be used throughout the adapter
+    var schema = {};
+
+    _.each(_.keys(collections), function(coll) {
+      var collection = collections[coll];
+      if(!collection) return;
+
+      var _schema = collection.waterline &#x26;&#x26; collection.waterline.schema &#x26;&#x26; collection.waterline.schema[collection.identity];
+      if(!_schema) return;
+
+      // Set defaults to ensure values are set
+      if(!_schema.attributes) _schema.attributes = {};
+      if(!_schema.tableName) _schema.tableName = coll;
+
+      // If the connection names are&#x27;t the same we don&#x27;t need it in the schema
+      if(!_.includes(collections[coll].connection, connection.identity)) {
+        return;
+      }
+
+      // If the tableName is different from the identity, store the tableName in the schema
+      var schemaKey = coll;
+      if(_schema.tableName != coll) {
+        schemaKey = _schema.tableName;
+      }
+
+      schema[schemaKey] = _schema;
+    });
+
+    if(&#x27;url&#x27; in connection) {
+      utils.parseUrl(connection);
+    }
+
+    // Store the connection
+    connections[connection.identity] = {
+      config: connection,
+      collections: collections,
+      connection: {},
+      schema: schema
+    };
+
+    var activeConnection = connections[connection.identity];
+
+    // Create a connection pool if configured to do so.
+    // (and set up the necessary `releaseConnection` functionality to drain it.)
+    if (activeConnection.config.pool) {
+      activeConnection.connection.pool = mysql.createPool(activeConnection.config);
+      activeConnection.connection.releaseConnection = _releaseConnection.poolfully;
+    }
+    // Otherwise, assign some default releaseConnection functionality.
+    else {
+      activeConnection.connection.releaseConnection = _releaseConnection.poollessly;
+    }
+
+    // Done!  The WLConnection (and all of it&#x27;s collections) have been loaded.
+    return cb();
+  };
+
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql.release" id="apidoc.module.sails-mysql.release">module sails-mysql.release</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.release.poolfully" id="apidoc.element.sails-mysql.release.poolfully">
+        function <span class="apidocSignatureSpan">sails-mysql.release.</span>poolfully
+        <span class="apidocSignatureSpan">(conn, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poolfully = function (conn, cb) {
+  if (!conn || typeof conn.release !== &#x27;function&#x27;) {
+    return cb(Errors.ConnectionRelease);
+  }
+
+  // Don&#x27;t wait for connection release to trigger this callback.
+  // (TODO: evaluate whether this should be the case)
+  conn.release();
+  return cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.release.poollessly" id="apidoc.element.sails-mysql.release.poollessly">
+        function <span class="apidocSignatureSpan">sails-mysql.release.</span>poollessly
+        <span class="apidocSignatureSpan">(conn, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poollessly = function (conn, cb) {
+  if (!conn || typeof conn.end !== &#x27;function&#x27;) {
+    return cb(Errors.ConnectionRelease);
+  }
+
+  // Wait for the connection to be ended, then trigger the callback.
+  conn.end(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql.sql" id="apidoc.module.sails-mysql.sql">module sails-mysql.sql</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql._schema" id="apidoc.element.sails-mysql.sql._schema">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>_schema
+        <span class="apidocSignatureSpan">(collectionName, attribute, attrName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_schema = function (collectionName, attribute, attrName) {
+  attrName = mysql.escapeId(attrName);
+  var type = sqlTypeCast(attribute);
+
+  // Process PK field
+  if(attribute.primaryKey) {
+
+    var columnDefinition = attrName + &#x27; &#x27; + type;
+
+    // If type is an integer, set auto increment
+    if(type === &#x27;TINYINT&#x27; || type === &#x27;SMALLINT&#x27; || type === &#x27;INT&#x27; || type === &#x27;BIGINT&#x27;) {
+      return columnDefinition + &#x27; UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY&#x27;;
+    }
+
+    // Just set NOT NULL on other types
+    return columnDefinition + &#x27; NOT NULL PRIMARY KEY&#x27;;
+  }
+
+  // Process NOT NULL field.
+  // if notNull is true, set NOT NULL constraint
+  var nullPart = &#x27;&#x27;;
+  if (attribute.notNull) {
+    nullPart = &#x27; NOT NULL &#x27;;
+  }
+
+  // Process UNIQUE field
+  if(attribute.unique) {
+    return attrName + &#x27; &#x27; + type + nullPart + &#x27; UNIQUE KEY&#x27;;
+  }
+
+  // Process INDEX field (NON-UNIQUE KEY)
+  if(attribute.index) {
+    return attrName + &#x27; &#x27; + type + nullPart + &#x27;, INDEX(&#x27; + attrName + &#x27;)&#x27;;
+  }
+
+  return attrName + &#x27; &#x27; + type + &#x27; &#x27; + nullPart;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+addColumn: function (collectionName, attrName, attrDef) {
+  // Escape table name and attribute name
+  var tableName = mysql.escapeId(collectionName);
+
+  // sails.log.verbose(&#x22;ADDING &#x22;,attrName, &#x22;with&#x22;,attrDef);
+
+  // Build column definition
+  var columnDefinition = sql.<span class="apidocCodeKeywordSpan">_schema</span>(collectionName, attrDef, attrName);
+
+  return &#x27;ALTER TABLE &#x27; + tableName + &#x27; ADD &#x27; + columnDefinition;
+},
+
+// @returns ALTER query for dropping a column
+removeColumn: function (collectionName, attrName) {
+  // Escape table name and attribute name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.addColumn" id="apidoc.element.sails-mysql.sql.addColumn">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>addColumn
+        <span class="apidocSignatureSpan">(collectionName, attrName, attrDef)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addColumn = function (collectionName, attrName, attrDef) {
+  // Escape table name and attribute name
+  var tableName = mysql.escapeId(collectionName);
+
+  // sails.log.verbose(&#x22;ADDING &#x22;,attrName, &#x22;with&#x22;,attrDef);
+
+  // Build column definition
+  var columnDefinition = sql._schema(collectionName, attrDef, attrName);
+
+  return &#x27;ALTER TABLE &#x27; + tableName + &#x27; ADD &#x27; + columnDefinition;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.attributes" id="apidoc.element.sails-mysql.sql.attributes">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>attributes
+        <span class="apidocSignatureSpan">(collectionName, attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attributes = function (collectionName, attributes) {
+  return sql.build(collectionName, attributes, sql.prepareAttribute);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.build" id="apidoc.element.sails-mysql.sql.build">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>build
+        <span class="apidocSignatureSpan">(collectionName, collection, fn, separator, keyOverride, parentKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (collectionName, collection, fn, separator, keyOverride, parentKey) {
+  separator = separator || &#x27;, &#x27;;
+  var $sql = &#x27;&#x27;;
+  _.each(collection, function(value, key) {
+    $sql += fn(collectionName, value, keyOverride || key, parentKey);
+
+    // (always append separator)
+    $sql += separator;
+  });
+
+  // (then remove final one)
+  return String($sql).replace(new RegExp(separator + &#x27;+$&#x27;), &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  countQuery: function(collectionName, options, tableDefs){
+var query = &#x27;SELECT count(*) as count from `&#x27; + collectionName + &#x27;`&#x27;;
+return query += sql.serializeOptions(collectionName, options, tableDefs);
+  },
+
+  // Create a schema csv for a DDL query
+  schema: function(collectionName, attributes) {
+return sql.<span class="apidocCodeKeywordSpan">build</span>(collectionName, attributes, sql._schema);
+  },
+
+  _schema: function(collectionName, attribute, attrName) {
+attrName = mysql.escapeId(attrName);
+var type = sqlTypeCast(attribute);
+
+// Process PK field
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.buildSingleQuery" id="apidoc.element.sails-mysql.sql.buildSingleQuery">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>buildSingleQuery
+        <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildSingleQuery = function (collectionName, options, tableDefs) {
+  var queryPart = &#x27;&#x27;;
+
+  if(options.where) {
+    queryPart += &#x27;WHERE &#x27; + sql.where(collectionName, options.where) + &#x27; &#x27;;
+  }
+
+  if (options.groupBy) {
+    queryPart += &#x27;GROUP BY &#x27;;
+
+    // Normalize to array
+    if(!Array.isArray(options.groupBy)) options.groupBy = [options.groupBy];
+
+    options.groupBy.forEach(function(key) {
+      queryPart += key + &#x27;, &#x27;;
+    });
+
+    // Remove trailing comma
+    queryPart = queryPart.slice(0, -2) + &#x27; &#x27;;
+  }
+
+  if (options.sort) {
+    queryPart += &#x27;ORDER BY &#x27;;
+
+    // Sort through each sort attribute criteria
+    _.each(options.sort, function(direction, attrName) {
+
+      queryPart += sql.prepareAttribute(collectionName, null, attrName) + &#x27; &#x27;;
+
+      // Basic MongoDB-style numeric sort direction
+      if (direction === 1) {
+        queryPart += &#x27;ASC, &#x27;;
+      } else {
+        queryPart += &#x27;DESC, &#x27;;
+      }
+    });
+
+    // Remove trailing comma
+    if(queryPart.slice(-2) === &#x27;, &#x27;) {
+      queryPart = queryPart.slice(0, -2) + &#x27; &#x27;;
+    }
+  }
+
+  if (hop(options, &#x27;limit&#x27;) &#x26;&#x26; (options.limit !== null &#x26;&#x26; options.limit !== undefined)) {
+    queryPart += &#x27;LIMIT &#x27; + options.limit + &#x27; &#x27;;
+  }
+
+  if (hop(options, &#x27;skip&#x27;) &#x26;&#x26; (options.skip !== null &#x26;&#x26; options.skip !== undefined)) {
+    // Some MySQL hackery here.  For details, see:
+    // http://stackoverflow.com/questions/255517/mysql-offset-infinite-rows
+    if (!options.limit) {
+        queryPart += &#x27;LIMIT 18446744073709551610 &#x27;;
+    }
+    queryPart += &#x27;OFFSET &#x27; + options.skip + &#x27; &#x27;;
+  }
+
+  return queryPart;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // allow the key to be named with join or joins
+  var joins = options.join || options.joins || [];
+
+  if (joins.length &#x3e; 0) {
+    return this.buildJoinQuery(collectionName, joins, options, tableDefs);
+  }
+
+  return this.<span class="apidocCodeKeywordSpan">buildSingleQuery</span>(collectionName, options, tableDefs);
+},
+
+/**
+ * Build Up a Select Statement Without Joins
+ */
+
+buildSingleQuery: function(collectionName, options, tableDefs) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.countQuery" id="apidoc.element.sails-mysql.sql.countQuery">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>countQuery
+        <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">countQuery = function (collectionName, options, tableDefs){
+  var query = &#x27;SELECT count(*) as count from `&#x27; + collectionName + &#x27;`&#x27;;
+  return query += sql.serializeOptions(collectionName, options, tableDefs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.normalizeSchema" id="apidoc.element.sails-mysql.sql.normalizeSchema">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>normalizeSchema
+        <span class="apidocSignatureSpan">(schema)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizeSchema = function (schema) {
+  return _.reduce(schema, function(memo, field) {
+
+    // Marshal mysql DESCRIBE to waterline collection semantics
+    var attrName = field.Field;
+    var type = field.Type;
+
+    // Remove (n) column-size indicators
+    type = type.replace(/\([0-9]+\)$/,&#x27;&#x27;);
+
+    memo[attrName] = {
+      type: type,
+      defaultsTo: field.Default,
+      autoIncrement: field.Extra === &#x27;auto_increment&#x27;
+    };
+
+    if(field.primaryKey) {
+      memo[attrName].primaryKey = field.primaryKey;
+    }
+
+    if(field.unique) {
+      memo[attrName].unique = field.unique;
+    }
+
+    if(field.indexed) {
+      memo[attrName].indexed = field.indexed;
+    }
+
+    return memo;
+  }, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.predicate" id="apidoc.element.sails-mysql.sql.predicate">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>predicate
+        <span class="apidocSignatureSpan">(collectionName, criterion, key, parentKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">predicate = function (collectionName, criterion, key, parentKey) {
+  var queryPart = &#x27;&#x27;;
+
+
+  if (parentKey) {
+    return sql.prepareCriterion(collectionName, criterion, key, parentKey);
+  }
+
+  // OR
+  if (key.toLowerCase() === &#x27;or&#x27;) {
+    queryPart = sql.build(collectionName, criterion, sql.where, &#x27; OR &#x27;);
+    return &#x27; ( &#x27; + queryPart + &#x27; ) &#x27;;
+  }
+
+  // AND
+  else if (key.toLowerCase() === &#x27;and&#x27;) {
+    queryPart = sql.build(collectionName, criterion, sql.where, &#x27; AND &#x27;);
+    return &#x27; ( &#x27; + queryPart + &#x27; ) &#x27;;
+  }
+
+  // IN
+  else if (_.isArray(criterion)) {
+    queryPart = sql.prepareAttribute(collectionName, null, key) + &#x22; IN (&#x22; + sql.values(collectionName, criterion, key) + &#x22;)&#x22;;
+    return queryPart;
+  }
+
+  // LIKE
+  else if (key.toLowerCase() === &#x27;like&#x27;) {
+    return sql.build(collectionName, criterion, function(collectionName, value, attrName) {
+      var attrStr = sql.prepareAttribute(collectionName, value, attrName);
+
+
+      // TODO: Handle regexp criterias
+      if (_.isRegExp(value)) {
+        throw new Error(&#x27;RegExp LIKE criterias not supported by the MySQLAdapter yet.  Please contribute @ http://github.com/balderdashy
+/sails-mysql&#x27;);
+      }
+
+      var valueStr = sql.prepareValue(collectionName, value, attrName);
+
+      // Handle escaped percent (%) signs [encoded as %%%]
+      valueStr = valueStr.replace(/%%%/g, &#x27;\\%&#x27;);
+
+      return attrStr + &#x22; LIKE &#x22; + valueStr;
+    }, &#x27; AND &#x27;);
+  }
+
+  // NOT
+  else if (key.toLowerCase() === &#x27;not&#x27;) {
+    throw new Error(&#x27;NOT not supported yet!&#x27;);
+  }
+
+  // Basic criteria item
+  else {
+    return sql.prepareCriterion(collectionName, criterion, key);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.prepareAttribute" id="apidoc.element.sails-mysql.sql.prepareAttribute">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareAttribute
+        <span class="apidocSignatureSpan">(collectionName, value, attrName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareAttribute = function (collectionName, value, attrName) {
+  return mysql.escapeId(collectionName) + &#x27;.&#x27; + mysql.escapeId(attrName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // or if one exists, the parent key
+    var attrStr, valueStr;
+
+
+    // Special comparator case
+    if (parentKey) {
+
+attrStr = sql.<span class="apidocCodeKeywordSpan">prepareAttribute</span>(collectionName, value, parentKey);
+valueStr = sql.prepareValue(collectionName, value, parentKey);
+
+// Why don&#x27;t we strip you out of those bothersome apostrophes?
+var nakedButClean = String(valueStr).replace(new RegExp(&#x27;^\&#x27;+|\&#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+
+if (key === &#x27;&#x3c;&#x27; || key === &#x27;lessThan&#x27;) return attrStr + &#x27;&#x3c;&#x27; + valueStr;
+else if (key === &#x27;&#x3c;=&#x27; || key === &#x27;lessThanOrEqual&#x27;) return attrStr + &#x27;&#x3c;=&#x27; + valueStr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.prepareCriterion" id="apidoc.element.sails-mysql.sql.prepareCriterion">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareCriterion
+        <span class="apidocSignatureSpan">(collectionName, value, key, parentKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareCriterion = function (collectionName, value, key, parentKey) {
+  // Special sub-attr case
+  if (validSubAttrCriteria(value)) {
+    return sql.where(collectionName, value, null, key);
+
+  }
+
+  // Build escaped attr and value strings using either the key,
+  // or if one exists, the parent key
+  var attrStr, valueStr;
+
+
+  // Special comparator case
+  if (parentKey) {
+
+    attrStr = sql.prepareAttribute(collectionName, value, parentKey);
+    valueStr = sql.prepareValue(collectionName, value, parentKey);
+
+    // Why don&#x27;t we strip you out of those bothersome apostrophes?
+    var nakedButClean = String(valueStr).replace(new RegExp(&#x27;^\&#x27;+|\&#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+
+    if (key === &#x27;&#x3c;&#x27; || key === &#x27;lessThan&#x27;) return attrStr + &#x27;&#x3c;&#x27; + valueStr;
+    else if (key === &#x27;&#x3c;=&#x27; || key === &#x27;lessThanOrEqual&#x27;) return attrStr + &#x27;&#x3c;=&#x27; + valueStr;
+    else if (key === &#x27;&#x3e;&#x27; || key === &#x27;greaterThan&#x27;) return attrStr + &#x27;&#x3e;&#x27; + valueStr;
+    else if (key === &#x27;&#x3e;=&#x27; || key === &#x27;greaterThanOrEqual&#x27;) return attrStr + &#x27;&#x3e;=&#x27; + valueStr;
+    else if (key === &#x27;!&#x27; || key === &#x27;not&#x27;) {
+      if (value === null) return attrStr + &#x27; IS NOT NULL&#x27;;
+      else if (_.isArray(value)) return attrStr + &#x27; NOT IN(&#x27; + valueStr + &#x27;)&#x27;;
+      else return attrStr + &#x27;&#x3c;&#x3e;&#x27; + valueStr;
+    }
+    else if (key === &#x27;like&#x27;) return attrStr + &#x27; LIKE \&#x27;&#x27; + nakedButClean + &#x27;\&#x27;&#x27;;
+    else if (key === &#x27;contains&#x27;) return attrStr + &#x27; LIKE \&#x27;%&#x27; + nakedButClean + &#x27;%\&#x27;&#x27;;
+    else if (key === &#x27;startsWith&#x27;) return attrStr + &#x27; LIKE \&#x27;&#x27; + nakedButClean + &#x27;%\&#x27;&#x27;;
+    else if (key === &#x27;endsWith&#x27;) return attrStr + &#x27; LIKE \&#x27;%&#x27; + nakedButClean + &#x27;\&#x27;&#x27;;
+    else throw new Error(&#x27;Unknown comparator: &#x27; + key);
+  } else {
+    attrStr = sql.prepareAttribute(collectionName, value, key);
+    valueStr = sql.prepareValue(collectionName, value, key);
+
+    // Special IS NULL case
+    if (_.isNull(value)) {
+      return attrStr + &#x22; IS NULL&#x22;;
+    } else return attrStr + &#x22;=&#x22; + valueStr;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // Recursively parse a predicate calculus and build a SQL query
+  predicate: function(collectionName, criterion, key, parentKey) {
+var queryPart = &#x27;&#x27;;
+
+
+if (parentKey) {
+  return sql.<span class="apidocCodeKeywordSpan">prepareCriterion</span>(collectionName, criterion, key, parentKey);
+}
+
+// OR
+if (key.toLowerCase() === &#x27;or&#x27;) {
+  queryPart = sql.build(collectionName, criterion, sql.where, &#x27; OR &#x27;);
+  return &#x27; ( &#x27; + queryPart + &#x27; ) &#x27;;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.prepareValue" id="apidoc.element.sails-mysql.sql.prepareValue">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>prepareValue
+        <span class="apidocSignatureSpan">(collectionName, value, attrName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareValue = function (collectionName, value, attrName) {
+
+  // Cast dates to SQL
+  if (_.isDate(value)) {
+    value = toSqlDate(value);
+  }
+
+  // Cast functions to strings
+  if (_.isFunction(value)) {
+    value = value.toString();
+  }
+
+  // Escape (also wraps in quotes)
+  return mysql.escape(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var attrStr, valueStr;
+
+
+    // Special comparator case
+    if (parentKey) {
+
+attrStr = sql.prepareAttribute(collectionName, value, parentKey);
+valueStr = sql.<span class="apidocCodeKeywordSpan">prepareValue</span>(collectionName, value, parentKey);
+
+// Why don&#x27;t we strip you out of those bothersome apostrophes?
+var nakedButClean = String(valueStr).replace(new RegExp(&#x27;^\&#x27;+|\&#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+
+if (key === &#x27;&#x3c;&#x27; || key === &#x27;lessThan&#x27;) return attrStr + &#x27;&#x3c;&#x27; + valueStr;
+else if (key === &#x27;&#x3c;=&#x27; || key === &#x27;lessThanOrEqual&#x27;) return attrStr + &#x27;&#x3c;=&#x27; + valueStr;
+else if (key === &#x27;&#x3e;&#x27; || key === &#x27;greaterThan&#x27;) return attrStr + &#x27;&#x3e;&#x27; + valueStr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.removeColumn" id="apidoc.element.sails-mysql.sql.removeColumn">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>removeColumn
+        <span class="apidocSignatureSpan">(collectionName, attrName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeColumn = function (collectionName, attrName) {
+  // Escape table name and attribute name
+  var tableName = mysql.escapeId(collectionName);
+  attrName = mysql.escapeId(attrName);
+
+  return &#x27;ALTER TABLE &#x27; + tableName + &#x27; DROP COLUMN &#x27; + attrName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.schema" id="apidoc.element.sails-mysql.sql.schema">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>schema
+        <span class="apidocSignatureSpan">(collectionName, attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">schema = function (collectionName, attributes) {
+  return sql.build(collectionName, attributes, sql._schema);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.serializeOptions" id="apidoc.element.sails-mysql.sql.serializeOptions">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>serializeOptions
+        <span class="apidocSignatureSpan">(collectionName, options, tableDefs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serializeOptions = function (collectionName, options, tableDefs) {
+
+  // Join clause
+  // allow the key to be named with join or joins
+  var joins = options.join || options.joins || [];
+
+  if (joins.length &#x3e; 0) {
+    return this.buildJoinQuery(collectionName, joins, options, tableDefs);
+  }
+
+  return this.buildSingleQuery(collectionName, options, tableDefs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  attrName = mysql.escapeId(attrName);
+
+  return &#x27;ALTER TABLE &#x27; + tableName + &#x27; DROP COLUMN &#x27; + attrName;
+},
+
+countQuery: function(collectionName, options, tableDefs){
+  var query = &#x27;SELECT count(*) as count from `&#x27; + collectionName + &#x27;`&#x27;;
+  return query += sql.<span class="apidocCodeKeywordSpan">serializeOptions</span>(collectionName, options, tableDefs);
+},
+
+// Create a schema csv for a DDL query
+schema: function(collectionName, attributes) {
+  return sql.build(collectionName, attributes, sql._schema);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.values" id="apidoc.element.sails-mysql.sql.values">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>values
+        <span class="apidocSignatureSpan">(collectionName, values, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">values = function (collectionName, values, key) {
+  return sql.build(collectionName, values, sql.prepareValue, &#x27;, &#x27;, key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+else if (key.toLowerCase() === &#x27;and&#x27;) {
+  queryPart = sql.build(collectionName, criterion, sql.where, &#x27; AND &#x27;);
+  return &#x27; ( &#x27; + queryPart + &#x27; ) &#x27;;
+}
+
+// IN
+else if (_.isArray(criterion)) {
+  queryPart = sql.prepareAttribute(collectionName, null, key) + &#x22; IN (&#x22; + sql.<span class="apidocCodeKeywordSpan">values
+</span>(collectionName, criterion, key) + &#x22;)&#x22;;
+  return queryPart;
+}
+
+// LIKE
+else if (key.toLowerCase() === &#x27;like&#x27;) {
+  return sql.build(collectionName, criterion, function(collectionName, value, attrName) {
+    var attrStr = sql.prepareAttribute(collectionName, value, attrName);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.sql.where" id="apidoc.element.sails-mysql.sql.where">
+        function <span class="apidocSignatureSpan">sails-mysql.sql.</span>where
+        <span class="apidocSignatureSpan">(collectionName, where, key, parentKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">where = function (collectionName, where, key, parentKey) {
+  return sql.build(collectionName, where, sql.predicate, &#x27; AND &#x27;, undefined, parentKey);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  values: function(collectionName, values, key) {
+return sql.build(collectionName, values, sql.prepareValue, &#x27;, &#x27;, key);
+  },
+
+  prepareCriterion: function(collectionName, value, key, parentKey) {
+// Special sub-attr case
+if (validSubAttrCriteria(value)) {
+  return sql.<span class="apidocCodeKeywordSpan">where</span>(collectionName, value, null, key);
+
+}
+
+// Build escaped attr and value strings using either the key,
+// or if one exists, the parent key
+var attrStr, valueStr;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql.teardown" id="apidoc.module.sails-mysql.teardown">module sails-mysql.teardown</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.teardown.configure" id="apidoc.element.sails-mysql.teardown.configure">
+        function <span class="apidocSignatureSpan">sails-mysql.teardown.</span>configure
+        <span class="apidocSignatureSpan">( connections )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function ( connections ) {
+
+<span class="apidocCodeCommentSpan"> /**
+   * Teardown a MySQL connection.
+   * (if the Waterline &#x22;connection&#x22; is using a pool, also `.end()` it.)
+   *
+   * @param  {String}   connectionName  [name of the Waterline &#x22;connection&#x22;]
+   * @param  {Function} cb
+   */
+</span>  return function teardown (connectionName, cb) {
+
+    function closeConnection(name) {
+      // Drain the MySQL connection pool for this Waterline Connection
+      // (if it&#x27;s in use.)
+
+      if ( connections[name] &#x26;&#x26; connections[name].connection &#x26;&#x26; connections[name].connection.pool ) {
+        // console.log(&#x27;Ending pool for &#x27; + connectionName);
+        connections[name].connection.pool.end();
+      }
+
+      // Make sure memory is freed by removing this stuff from our
+      // global set of WL Connections.
+      delete connections[name];
+    }
+
+    // If no connection name was given, teardown all the connections
+    if(!connectionName) {
+      Object.keys(connections).forEach(function(conn) {
+        closeConnection(conn);
+      });
+    }
+
+    // Else only teardown a single connection
+    else {
+      closeConnection(connectionName);
+    }
+
+    return cb();
+
+  };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-mysql.utils" id="apidoc.module.sails-mysql.utils">module sails-mysql.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.utils.buildSelectStatement" id="apidoc.element.sails-mysql.utils.buildSelectStatement">
+        function <span class="apidocSignatureSpan">sails-mysql.utils.</span>buildSelectStatement
+        <span class="apidocSignatureSpan">(criteria, table, schemaDefs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildSelectStatement = function (criteria, table, schemaDefs) {
+
+  var query = &#x27;&#x27;;
+
+  if(criteria.groupBy || criteria.sum || criteria.average || criteria.min || criteria.max) {
+    query = &#x27;SELECT &#x27;;
+
+    // Append groupBy columns to select statement
+    if(criteria.groupBy) {
+      if(criteria.groupBy instanceof Array) {
+        criteria.groupBy.forEach(function(opt){
+          query += opt + &#x27;, &#x27;;
+        });
+
+      } else {
+        query += criteria.groupBy + &#x27;, &#x27;;
+      }
+    }
+
+    // Handle SUM
+    if (criteria.sum) {
+      if(criteria.sum instanceof Array) {
+        criteria.sum.forEach(function(opt){
+          query += &#x27;SUM(&#x27; + opt + &#x27;) AS &#x27; + opt + &#x27;, &#x27;;
+        });
+
+      } else {
+        query += &#x27;SUM(&#x27; + criteria.sum + &#x27;) AS &#x27; + criteria.sum + &#x27;, &#x27;;
+      }
+    }
+
+    // Handle AVG (casting to float to fix percision with trailing zeros)
+    if (criteria.average) {
+      if(criteria.average instanceof Array) {
+        criteria.average.forEach(function(opt){
+          query += &#x27;AVG(&#x27; + opt + &#x27;) AS &#x27; + opt + &#x27;, &#x27;;
+        });
+
+      } else {
+        query += &#x27;AVG(&#x27; + criteria.average + &#x27;) AS &#x27; + criteria.average + &#x27;, &#x27;;
+      }
+    }
+
+    // Handle MAX
+    if (criteria.max) {
+      if(criteria.max instanceof Array) {
+        criteria.max.forEach(function(opt){
+          query += &#x27;MAX(&#x27; + opt + &#x27;) AS &#x27; + opt + &#x27;, &#x27;;
+        });
+
+      } else {
+        query += &#x27;MAX(&#x27; + criteria.max + &#x27;) AS &#x27; + criteria.max + &#x27;, &#x27;;
+      }
+    }
+
+    // Handle MIN
+    if (criteria.min) {
+      if(criteria.min instanceof Array) {
+        criteria.min.forEach(function(opt){
+          query += &#x27;MIN(&#x27; + opt + &#x27;) AS &#x27; + opt + &#x27;, &#x27;;
+        });
+
+      } else {
+        query += &#x27;MIN(&#x27; + criteria.min + &#x27;) AS &#x27; + criteria.min + &#x27;, &#x27;;
+      }
+    }
+
+    // trim trailing comma
+    query = query.slice(0, -2) + &#x27; &#x27;;
+
+    // Add FROM clause
+    return query += &#x27;FROM `&#x27; + table + &#x27;` &#x27;;
+  }
+
+<span class="apidocCodeCommentSpan">  /**
+   * If no aggregate options lets just build a normal query
+   */
+</span>
+
+  // Add all keys to the select statement for this table
+  query += &#x27;SELECT &#x27;;
+
+  var selectKeys = [],
+      joinSelectKeys = [];
+
+  if ( !schemaDefs[table] ) throw new Error(&#x27;Schema definition missing for table: `&#x27;+table+&#x27;`&#x27;);
+
+  _( schemaDefs[table] ).forEach(function(schemaDef, key) {
+    selectKeys.push({ table: table, key: key });
+  });
+
+  // Check for joins
+  if(criteria.joins || criteria.join) {
+
+    var joins = criteria.joins || criteria.join;
+
+    joins.forEach(function(join) {
+      if(!join.select) return;
+
+      Object.keys(schemaDefs[join.child.toLowerCase()]).forEach(function(key) {
+        var _join = _.cloneDeep(join);
+        _join.key = key;
+        joinSelectKeys.push(_join);
+      });
+
+      // Remove the foreign key for this join from the selectKeys array
+      selectKeys = selectKeys.filter(function(select) {
+        var keep = true;
+        if(select.key === join.parentKey &#x26;&#x26; join.removeParentKey) keep = false;
+        return keep;
+      });
+    });
+  }
+
+  // Add all the columns to be selected that are not joins
+  selectKeys.forEach(function(select) {
+    query += &#x27;`&#x27; + select.table + &#x27;`.`&#x27; + select.key + &#x27;`, &#x27;;
+  });
+
+  // Add all the columns from the joined tables
+  joinSelectKeys.forEach(function(select) {
+
+    // Create an alias by prepending the child table with the alias of the join
+    var alias = select.alias.toLowerCase() + &#x27;_&#x27; + select.child.toLowerCase();
+
+    // If this is a belongs_to relationship, keep the foreign key name from the AS part
+    // of the query. This will result in a selected column like: &#x22;user&#x22;.&#x22;id&#x22; AS &#x22;user_id__id&#x22;
+    if(select.model) {
+      return query += mysql.escapeId(alias) + &#x27;.&#x27; + mysql.escapeId(select.key) + &#x27; AS &#x27; +
+                      mysql.escapeId(select.parentKey + &#x27;__&#x27; + select.key) + &#x27;, &#x27;;
+    }
+
+    // If a junctionTable is used, the child value should be used in the AS part of the
+    // select query.
+    if(select.junctionTable) {
+      return query += mysql.escapeId(alias) + &#x27;.&#x27; + mysql.escapeId(select.key) + &#x27; AS &#x27; +
+                      mysql.escapeId(select.alias + &#x27;__&#x27; + select.key) + &#x27;, &#x27;;
+    }
+
+    // Else if a hasMany attribu ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.utils.parseUrl" id="apidoc.element.sails-mysql.utils.parseUrl">
+        function <span class="apidocSignatureSpan">sails-mysql.utils.</span>parseUrl
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseUrl = function (config) {
+  if(!_.isString(config.url)) return config;
+
+  var obj = url.parse(config.url);
+
+  config.host = obj.hostname || config.host;
+  config.port = obj.port || config.port;
+
+  if(_.isString(obj.pathname)) {
+    config.database = obj.pathname.split(&#x22;/&#x22;)[1] || config.database;
+  }
+
+  if(_.isString(obj.auth)) {
+    config.user = obj.auth.split(&#x22;:&#x22;)[0] || config.user;
+    config.password = obj.auth.split(&#x22;:&#x22;)[1] || config.password;
+  }
+  return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    schemaKey = _schema.tableName;
+  }
+
+  schema[schemaKey] = _schema;
+});
+
+if(&#x27;url&#x27; in connection) {
+  utils.<span class="apidocCodeKeywordSpan">parseUrl</span>(connection);
+}
+
+// Store the connection
+connections[connection.identity] = {
+  config: connection,
+  collections: collections,
+  connection: {},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.utils.prepareValue" id="apidoc.element.sails-mysql.utils.prepareValue">
+        function <span class="apidocSignatureSpan">sails-mysql.utils.</span>prepareValue
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareValue = function (value) {
+
+  if(_.isUndefined(value) || value === null) return value;
+
+  // Cast functions to strings
+  if (_.isFunction(value)) {
+    value = value.toString();
+  }
+
+  // Store Arrays and Objects as strings
+  if (Array.isArray(value) || value.constructor &#x26;&#x26; value.constructor.name === &#x27;Object&#x27;) {
+    try {
+      value = JSON.stringify(value);
+    } catch (e) {
+      // just keep the value and let the db handle an error
+      value = value;
+    }
+  }
+
+  // Cast dates to SQL
+  if (_.isDate(value)) {
+    value = utils.toSqlDate(value);
+  }
+
+  return mysql.escape(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var attrStr, valueStr;
+
+
+    // Special comparator case
+    if (parentKey) {
+
+attrStr = sql.prepareAttribute(collectionName, value, parentKey);
+valueStr = sql.<span class="apidocCodeKeywordSpan">prepareValue</span>(collectionName, value, parentKey);
+
+// Why don&#x27;t we strip you out of those bothersome apostrophes?
+var nakedButClean = String(valueStr).replace(new RegExp(&#x27;^\&#x27;+|\&#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+
+if (key === &#x27;&#x3c;&#x27; || key === &#x27;lessThan&#x27;) return attrStr + &#x27;&#x3c;&#x27; + valueStr;
+else if (key === &#x27;&#x3c;=&#x27; || key === &#x27;lessThanOrEqual&#x27;) return attrStr + &#x27;&#x3c;=&#x27; + valueStr;
+else if (key === &#x27;&#x3e;&#x27; || key === &#x27;greaterThan&#x27;) return attrStr + &#x27;&#x3e;&#x27; + valueStr;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-mysql.utils.toSqlDate" id="apidoc.element.sails-mysql.utils.toSqlDate">
+        function <span class="apidocSignatureSpan">sails-mysql.utils.</span>toSqlDate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toSqlDate(date) {
+
+  date = date.getFullYear() + &#x27;-&#x27; +
+    (&#x27;00&#x27; + (date.getMonth()+1)).slice(-2) + &#x27;-&#x27; +
+    (&#x27;00&#x27; + date.getDate()).slice(-2) + &#x27; &#x27; +
+    (&#x27;00&#x27; + date.getHours()).slice(-2) + &#x27;:&#x27; +
+    (&#x27;00&#x27; + date.getMinutes()).slice(-2) + &#x27;:&#x27; +
+    (&#x27;00&#x27; + date.getSeconds()).slice(-2);
+
+  return date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     // just keep the value and let the db handle an error
+     value = value;
+   }
+ }
+
+ // Cast dates to SQL
+ if (_.isDate(value)) {
+   value = utils.<span class="apidocCodeKeywordSpan">toSqlDate</span>(value);
+ }
+
+ return mysql.escape(value);
+};
+
+/**
+* Builds a Select statement determining if Aggeregate options are needed.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
